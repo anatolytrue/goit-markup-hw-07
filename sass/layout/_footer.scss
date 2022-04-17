@@ -3,6 +3,10 @@
     background: var(--background-footer);
     padding-top: 60px;
     padding-bottom: 60px;
+
+    .logo {
+        margin-bottom: 20px;
+    }
 }
 
 .footer-address {
@@ -11,10 +15,10 @@
 }
 
 
-
-.adress-list .link:hover,
-.adress-list .link:focus {
-    color: var(--secondary-color);
+.adress-list{
+    .link:focus, .link:hover {
+        color: var(--secondary-color);
+    }
 }
 
 .adress-map {
@@ -36,9 +40,6 @@
     margin-bottom: 9px;
 }
 
-.footer .logo {
-    margin-bottom: 20px;
-}
 
 .footer-social {
     margin-right: 93px;
@@ -80,16 +81,16 @@
     transition-property: background-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.footer-social-list-link:hover,
-.footer-social-list-link:focus {
-    background-color: var(--secondary-color);
-}
+    &:hover,
+    &:focus {
+        background-color: var(--secondary-color);
 
-.footer-social-list-link:hover .social-list-icon,
-.footer-social-list-link:focus .social-list-icon {
-    fill: var(--main-color);
+        .social-list-icon {
+            fill: var(--main-color);
+        }
+    }
+
 }
 
 .footer-social-list-icon {

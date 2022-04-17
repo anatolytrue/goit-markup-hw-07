@@ -145,6 +145,17 @@ address {
   visibility: collapse;
 }
 
+.modal {
+  position: absolute;
+  width: 528px;
+  height: 581px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  background-color: var(--main-color);
+}
+
 .modal-button {
   font-family: Roboto, sans-serif;
   font-weight: 700;
@@ -168,22 +179,10 @@ address {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-button:hover,
-.modal-button:focus {
+.modal-button:hover, .modal-button:focus {
   background: #188ce8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-}
-
-.modal {
-  position: absolute;
-  width: 528px;
-  height: 581px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  padding: 40px;
-  background-color: var(--main-color);
 }
 
 .modal-close-button {
@@ -202,14 +201,14 @@ address {
   cursor: pointer;
 }
 
+.modal-close-button:hover .modal-close-icon {
+  fill: #2196F3;
+}
+
 .modal-close-icon {
   position: absolute;
   fill: #000000;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-close-button:hover .modal-close-icon {
-  fill: #2196F3;
 }
 
 .modal-form {
@@ -250,16 +249,6 @@ address {
   margin-top: 20px;
 }
 
-.modal-form-policy-label::before {
-  content: '';
-  display: inline-block;
-  width: 16px;
-  height: 15px;
-  outline: solid;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
 .modal-form-input {
   width: 100%;
   height: 40px;
@@ -277,15 +266,6 @@ address {
 
 .modal-form-input:focus + .modal-form-field-icon {
   fill: #2196f3;
-}
-
-.modal-form-policy-input:focus + .modal-form-policy-label::before {
-  outline: 1px solid #2196f3;
-}
-
-.modal-form-textarea:focus {
-  outline: none;
-  border-color: #2196f3;
 }
 
 .modal-form-field {
@@ -324,12 +304,17 @@ address {
   transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form-policy-input {
-  margin-right: 7px;
+.modal-form-policy-input:focus + .modal-form-policy-label::before {
+  outline: 1px solid #2196f3;
 }
 
 .modal-form-policy-input:checked + .modal-form-policy-label::before {
   background-image: url("../images/icon check.svg");
+  outline: none;
+}
+
+.modal-form-policy-input {
+  margin-right: 7px;
 }
 
 .modal-form-button {
@@ -345,8 +330,7 @@ address {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form-button:hover,
-.modal-form-button:focus {
+.modal-form-button:hover, .modal-form-button:focus {
   background-color: #188CE8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -366,6 +350,11 @@ address {
   border-radius: 4px;
   color: var(--primary-text-color);
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-textarea:focus {
+  outline: none;
+  border-color: #2196f3;
 }
 
 .social-list {
@@ -392,13 +381,11 @@ address {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-list-link:hover,
-.social-list-link:focus {
+.social-list-link:hover, .social-list-link:focus {
   background-color: var(--secondary-color);
 }
 
-.social-list-link:hover .social-list-icon,
-.social-list-link:focus .social-list-icon {
+.social-list-link:hover .social-list-icon, .social-list-link:focus .social-list-icon {
   fill: var(--main-color);
 }
 
@@ -432,16 +419,6 @@ address {
   margin-left: 93px;
 }
 
-.nav-list-item:not(:last-child) {
-  margin-right: 50px;
-}
-
-.contact {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-}
-
 .nav-list-link {
   position: relative;
   display: block;
@@ -455,13 +432,20 @@ address {
   border: -1px;
 }
 
+.nav-list-link:hover, .nav-list-link:focus {
+  color: var(--secondary-color);
+}
+
 .nav-list-item {
   position: relative;
   height: 100%;
 }
 
-.nav-list-link:hover,
-.nav-list-link:focus {
+.nav-list-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.nav-list-link-active {
   color: var(--secondary-color);
 }
 
@@ -477,8 +461,10 @@ address {
   border-radius: 2px;
 }
 
-.nav-list-link-active {
-  color: var(--secondary-color);
+.contact {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
 }
 
 .contact-number {
@@ -495,8 +481,7 @@ address {
   color: var(--seconary-text-color);
 }
 
-.contact-list-link:hover,
-.contact-list-link:focus {
+.contact-list-link:hover, .contact-list-link:focus {
   color: var(--secondary-color);
 }
 
@@ -606,6 +591,11 @@ address {
   line-height: 1.14;
 }
 
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .team-list-content {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -629,11 +619,6 @@ address {
   color: var(--seconary-text-color);
 }
 
-.team-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .team-list-item {
   background-color: var(--main-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -654,7 +639,6 @@ address {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin-right: 30px; */
 }
 
 .client-list-item:not(:last-child) {
@@ -669,19 +653,14 @@ address {
   border-radius: 4px;
   width: 170px;
   height: 92px;
-  /* transition-property: border-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.client-list-link:hover,
-.client-list-link:focus {
+.client-list-link:hover, .client-list-link:focus {
   border-color: var(--secondary-color);
 }
 
-.client-list-link:hover .client-list-icon,
-.client-list-link:focus .client-list-icon {
+.client-list-link:hover .client-list-icon, .client-list-link:focus .client-list-icon {
   fill: var(--secondary-color);
 }
 
@@ -704,17 +683,28 @@ address {
   color: var(--primary-text-color);
 }
 
-.projects-list-button:active,
-.projects-list-button:hover,
-.projects-list-button:focus {
+.projects-list-button:active, .projects-list-button:hover, .projects-list-button:focus {
   color: var(--main-color);
   background-color: var(--secondary-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.projects-list-item:not(:last-child) {
+  margin-right: 8px;
+}
+
 .portfolio-projects-link {
   display: block;
   position: relative;
+}
+
+.portfolio-projects-link:hover, .portfolio-projects-link:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-projects-link:hover .portfolio-projects-overlay, .portfolio-projects-link:focus .portfolio-projects-overlay {
+  transform: translateY(0);
 }
 
 .portfolio-projects-title {
@@ -759,29 +749,11 @@ address {
   padding: 63px 24px;
 }
 
-.portfolio-projects-link:hover .portfolio-projects-overlay {
-  transform: translateY(0);
-}
-
-.portfolio-projects-link:focus .portfolio-projects-overlay {
-  transform: translateY(0);
-}
-
-.portfolio-projects-link:hover,
-.portfolio-projects-link:focus {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .projects-list {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 50px;
-}
-
-.projects-list-item:not(:last-child) {
-  margin-right: 8px;
 }
 
 .portfolio-projects {
@@ -813,13 +785,16 @@ address {
   padding-bottom: 60px;
 }
 
+.footer .logo {
+  margin-bottom: 20px;
+}
+
 .footer-address {
   flex-grow: 1;
   margin-right: 70px;
 }
 
-.adress-list .link:hover,
-.adress-list .link:focus {
+.adress-list .link:focus, .adress-list .link:hover {
   color: var(--secondary-color);
 }
 
@@ -840,10 +815,6 @@ address {
 
 .adress-list-item:not(:last-child) {
   margin-bottom: 9px;
-}
-
-.footer .logo {
-  margin-bottom: 20px;
 }
 
 .footer-social {
@@ -888,13 +859,11 @@ address {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-social-list-link:hover,
-.footer-social-list-link:focus {
+.footer-social-list-link:hover, .footer-social-list-link:focus {
   background-color: var(--secondary-color);
 }
 
-.footer-social-list-link:hover .social-list-icon,
-.footer-social-list-link:focus .social-list-icon {
+.footer-social-list-link:hover .social-list-icon, .footer-social-list-link:focus .social-list-icon {
   fill: var(--main-color);
 }
 
