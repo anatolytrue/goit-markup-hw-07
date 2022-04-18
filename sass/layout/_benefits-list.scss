@@ -1,4 +1,4 @@
-.benefits-section {
+.benefits__section {
     padding-top: 0;
 }
 
@@ -6,7 +6,6 @@
 .benefits-list {
     display: flex;
     align-items: center;
-
     justify-content: space-between;
 
     &:not(:last-child) {
@@ -14,11 +13,11 @@
     }
 }
 
-.benefits-thumb {
+.benefits-list__thumb {
     position: relative;
 }
 
-.benefits-name {
+.benefits-list__name {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,8 +32,10 @@
     color: var(--main-color);
     background-color: rgba(47, 48, 58, 0.8);
 
-    h3 {
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 1.14;}
+}
+
+.benefits-list__description{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
 }

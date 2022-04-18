@@ -1,4 +1,11 @@
-.projects-list-button {
+.projects-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.projects-list__button {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.62;
@@ -25,11 +32,25 @@
 }
 }
 
-.projects-list-item:not(:last-child) {
+.projects-list__item:not(:last-child) {
     margin-right: 8px;
 }
 
-.portfolio-projects-link {
+
+.portfolio-projects {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: -15px;
+}
+
+.portfolio-projects__item {
+    margin: 15px;
+    flex-flow: calc((100%-90px) / 3);
+
+}
+
+.portfolio-projects__link {
     display: block;
     position: relative;
 
@@ -38,36 +59,19 @@
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
-        .portfolio-projects-overlay {
+        .portfolio-projects__overlay {
             transform: translateY(0);
         }
     }
-
 }
 
-.portfolio-projects-title {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 0.06em;
-    color: var(--primary-text-color);
-}
-
-.portfolio-projects-description {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.87;
-    letter-spacing: 0.03em;
-    color: var(--seconary-text-color);
-}
-
-.portfolio-projects-thumb {
+.portfolio-projects__thumb {
     position: relative;
     display: inline-block;
     overflow: hidden;
 }
 
-.portfolio-projects-overlay {
+.portfolio-projects__overlay {
     display: inline-block;
     content: "";
     position: absolute;
@@ -87,34 +91,29 @@
     padding: 63px 24px;
 }
 
-
-.projects-list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 50px;
-}
-
-
-.portfolio-projects {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: -15px;
-}
-
-.portfolio-projects-item {
-    margin: 15px;
-    flex-flow: calc((100%-90px) / 3);
-
-}
-
-.portfolio-projects-content {
+.portfolio-projects__content {
     border: 1px solid #eeeeee;
     border-top: none;
     padding: 20px 24px;
 }
 
-.portfolio-projects-title {
+
+.portfolio-projects__title {
     margin-bottom: 4px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: var(--primary-text-color);
 }
+
+.portfolio-projects__description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.03em;
+    color: var(--seconary-text-color);
+}
+
+
+
