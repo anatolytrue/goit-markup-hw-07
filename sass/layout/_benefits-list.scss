@@ -1,4 +1,4 @@
-.benefits__section {
+.section_not-padding-top {
     padding-top: 0;
 }
 
@@ -8,9 +8,9 @@
     align-items: center;
     justify-content: space-between;
 
-    &:not(:last-child) {
-        margin-right: 30px;
-    }
+    // &:not(:last-child) {
+    //     margin-right: 30px;
+    // }
 }
 
 .benefits-list__thumb {
